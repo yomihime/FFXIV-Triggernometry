@@ -876,8 +876,10 @@
               <Action OrderNumber="25" KeypressType="WindowMessage" KeyPressCode="27" KeyPressWindow="最终幻想XIV" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="2200">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="26" KeypressType="WindowMessage" KeyPressCode="96" KeyPressWindow="最终幻想XIV" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" TriggerId="37dbf564-f887-4612-9bf1-ca6c3b654f37" TriggerForce="true" Enabled="False" ActionType="Trigger" ExecutionDelayExpression="1200">
-                <Condition Enabled="false" Grouping="Or" />
+              <Action OrderNumber="26" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" TriggerId="37dbf564-f887-4612-9bf1-ca6c3b654f37" TriggerForce="true" ActionType="Trigger" ExecutionDelayExpression="1200">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionR="start" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
               </Action>
             </Actions>
             <Condition Enabled="false" Grouping="Or" />
