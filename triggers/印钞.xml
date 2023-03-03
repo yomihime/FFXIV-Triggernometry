@@ -208,7 +208,6 @@
                   </Action>
                 </Actions>
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Trigger>
             </Triggers>
           </Folder>
@@ -932,7 +931,6 @@
               </Action>
             </Actions>
             <Condition Enabled="false" Grouping="Or" />
-            <Conditions />
           </Trigger>
           <Trigger Enabled="true" Name="开始收雇员" Id="f5f66cb0-f127-4934-8cc5-590d96b239e1" RegularExpression="">
             <Actions>
@@ -971,12 +969,33 @@
           </Action>
         </Actions>
         <Condition Enabled="false" Grouping="Or" />
-        <Conditions />
       </Trigger>
       <Trigger Enabled="true" Name="使用说明，看描述页" Id="ab0afc80-ff95-4d93-b587-31a99c1418e3" RegularExpression="" Description="说明：&#xD;&#xA;搓东西：&#xD;&#xA;把搓东西用的宏放在技能栏1的位置，技能“修理”放在技能栏5的位置，开搓就会一直自动搓下去，耐久不足自动修理&#xD;&#xA;&#xD;&#xA;收雇员：&#xD;&#xA;首先设置最后一个回来的雇员，用/e guyuan 雇员名&#xD;&#xA;然后用shift+f把雇员铃设为焦点目标，站在雇员铃旁挂机就可以了&#xD;&#xA;&#xD;&#xA;边搓边收雇员：&#xD;&#xA;发送/e start cuo 开启边搓边收模式&#xD;&#xA;开搓就会一直搓，然后雇员回来起身收，收完继续蹲下搓之前搓的配方（注：配方必须是在制作笔记里指定页找到的配方，不能用搜索，素材也不能有HQ素材）&#xD;&#xA;发送/e exit cuo 关闭边搓边收模式&#xD;&#xA;素材不足或制作失败会自动关闭边搓边收模式&#xD;&#xA;&#xD;&#xA;已知问题：&#xD;&#xA;包里必须有足够修理的暗物质&#xD;&#xA;背包必须有足够的空间收雇员&#xD;&#xA;探险币必须充足&#xD;&#xA;&#xD;&#xA;否则都会卡住">
         <Actions />
         <Condition Enabled="false" Grouping="Or" />
-        <Conditions />
+      </Trigger>
+      <Trigger Enabled="true" Name="手动触发一次收雇员" Id="5815850a-f5d0-42d8-9063-b0bbf528014d" RegularExpression="0038:.*?shouguyuan">
+        <Actions>
+          <Action OrderNumber="1" OBSEndPoint="ws://${_const[OBSWebsocketEndpoint]}:${_const[OBSWebsocketPort]}" OBSPassword="${_const[OBSWebsocketPassword]}" UseTTSTextExpression="雇员回来了" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerId="f5f66cb0-f127-4934-8cc5-590d96b239e1" TriggerForce="regexp,conditions" ActionType="Trigger">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Name="开启/关闭收雇员" Id="cda9b8f5-9b52-4056-8616-8192a176ebd3" RegularExpression="00:0038:.*?(start|exit) guyuan$">
+        <Actions>
+          <Action OrderNumber="1" FolderId="20db7b0a-b263-4066-ba74-5c23d54f035b" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" TriggerOp="DisableTrigger" TriggerId="4ef98985-5513-4585-8802-587088010aa5" TriggerForce="true" ActionType="Folder">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionR="start" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="2" FolderOp="DisableFolder" FolderId="20db7b0a-b263-4066-ba74-5c23d54f035b" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" TriggerOp="EnableTrigger" TriggerId="5c7c9ba0-082f-40e3-befc-bfa3ce9bed5a" TriggerForce="true" ActionType="Folder">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionR="exit" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
       </Trigger>
     </Triggers>
   </ExportedFolder>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1">
+  <ExportedFolder Id="db733ebe-18bb-4932-aa99-55feecd2d762" Name="简易自动钓鱼" Enabled="true">
+    <Folders />
+    <Triggers>
+      <Trigger Enabled="true" Name="自动抛竿" Id="0ba4dd17-6f1b-40a7-86f4-a85e88032c27" RegularExpression="08C3::不经意间鱼饵被吃掉了|(?&lt;player&gt;.*)成功钓上了.*?|捕到了|没有钓到任何东西……|不经意间|上钩的鱼逃走了……">
+        <Actions>
+          <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressCode="49" KeyPressWindow="最终幻想XIV" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="3000">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Name="开始钓鱼" Id="4a068d26-1cd5-4375-ac30-f2ac3295e923" RegularExpression="08C3::(?&lt;player&gt;.*)在(?&lt;fisheries&gt;.*)甩出了鱼线开始钓鱼。">
+        <Actions>
+          <Action OrderNumber="1" OBSEndPoint="ws://${_const[OBSWebsocketEndpoint]}:${_const[OBSWebsocketPort]}" OBSPassword="${_const[OBSWebsocketPassword]}" UseTTSTextExpression="开始钓鱼" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Name="结束钓鱼" Id="0a49ef0c-d07d-4ecf-99a8-5ccaae148284" RegularExpression="08C3::(?&lt;player&gt;.*)收回了鱼线。">
+        <Actions>
+          <Action OrderNumber="1" OBSEndPoint="ws://${_const[OBSWebsocketEndpoint]}:${_const[OBSWebsocketPort]}" OBSPassword="${_const[OBSWebsocketPassword]}" UseTTSTextExpression="结束钓鱼" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Name="自动提钩" Id="63bd77c1-62b4-4d11-9a0b-fb5d6a5f94d3" RegularExpression="{&quot;type&quot;:1}|{&quot;type&quot;:2}|{&quot;type&quot;:3}">
+        <Actions>
+          <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressCode="50" KeyPressWindow="最终幻想XIV" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="1000">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
+</TriggernometryExport>
