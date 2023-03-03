@@ -3,7 +3,7 @@
   <ExportedFolder Id="db733ebe-18bb-4932-aa99-55feecd2d762" Name="简易自动钓鱼" Enabled="true">
     <Folders />
     <Triggers>
-      <Trigger Enabled="true" Name="自动抛竿" Id="0ba4dd17-6f1b-40a7-86f4-a85e88032c27" RegularExpression="08C3::不经意间鱼饵被吃掉了|(?&lt;player&gt;.*)成功钓上了.*?|捕到了|没有钓到任何东西……|不经意间|上钩的鱼逃走了……">
+      <Trigger Enabled="true" Name="自动抛竿" Id="0ba4dd17-6f1b-40a7-86f4-a85e88032c27" RegularExpression="08C3::不经意间鱼饵被吃掉了|(?&lt;player&gt;.*)成功钓上了.*?|上钩的鱼逃走了……|没有钓到任何东西……|不经意间|捕到了.*?">
         <Actions>
           <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressCode="49" KeyPressWindow="最终幻想XIV" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="3000">
             <Condition Enabled="false" Grouping="Or" />
@@ -34,6 +34,11 @@
           </Action>
         </Actions>
         <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Name="使用说明，看描述页" Id="5eb6f608-22cd-43f4-97fa-bb88b5bcfda0" RegularExpression="" Description="启用抹茶插件，把“日志及数据共享”三个都打上勾&#xD;&#xA;把抛竿设为技能栏1，提钩设为技能栏2&#xD;&#xA;&#xD;&#xA;找块水抛竿就行了（建议用万能拟饵或者买足够多的鱼饵）&#xD;&#xA;&#xD;&#xA;已知问题：&#xD;&#xA;这里的鱼现在警惕性很高，看来还是换个地点比较好。（暂时无解）&#xD;&#xA;装备坏了怎么办（未测试）">
+        <Actions />
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
       </Trigger>
     </Triggers>
   </ExportedFolder>

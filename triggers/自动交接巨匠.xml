@@ -113,6 +113,11 @@
         </Actions>
         <Condition Enabled="false" Grouping="Or" />
       </Trigger>
+      <Trigger Enabled="true" Name="使用说明，看描述页" Id="c7635eb5-db51-4ce2-8f01-ee69a8409ade" RegularExpression="" Description="准备工作：&#xD;&#xA;首先站在格里格附近，并且把阿尔德伊恩设为焦点目标（要保证站在和两个NPC都能对话的位置且更靠近格里格）&#xD;&#xA;把 制作委托：提高品质用的炼金药 这个理符任务接了，不要交（可以隐藏起来）&#xD;&#xA;F10为 选中焦点目标，F12为 选中距离最近的非玩家角色或场景物体&#xD;&#xA;在触发器关闭的情况下手动交一次巨匠（目的是为了让手柄光标停留在物品栏的巨匠上）&#xD;&#xA;&#xD;&#xA;打开自动交巨匠触发器&#xD;&#xA;发送/e 开始接巨匠 &#xD;&#xA;就能自动交巨匠了&#xD;&#xA;&#xD;&#xA;理符额度不足会自动停止&#xD;&#xA;请保证包里有足够的巨匠，否则会在浪费一个理符后停止&#xD;&#xA;不想浪费理符请在“消息过滤设置”里勾选“非玩家角色对话”，这样才能在包里没有足够的巨匠的情况下自动终止">
+        <Actions />
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
     </Triggers>
   </ExportedFolder>
 </TriggernometryExport>
