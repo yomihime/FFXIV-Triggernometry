@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1">
+  <ExportedFolder Id="f5481cda-f832-4432-9944-17c3d6f837f7" Name="云观群岛冲分" Enabled="true">
+    <Folders />
+    <Triggers>
+      <Trigger Enabled="true" Name="以小钓大" Id="458fe2f4-c9b0-49e3-b908-72fcba20ece8" RegularExpression="0843::以小钓大的机会！|钓到了能用作“以小钓大II”鱼饵的鱼。">
+        <Actions>
+          <Action OrderNumber="1" OBSEndPoint="ws://${_const[OBSWebsocketEndpoint]}:${_const[OBSWebsocketPort]}" OBSPassword="${_const[OBSWebsocketPassword]}" UseTTSTextExpression="以小钓大" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" KeypressType="WindowMessage" KeyPressCode="51" KeyPressWindow="最终幻想XIV" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="1800">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="true" Name="大鱼猎手+自动抛竿" Id="d10964ed-0af2-4249-b57d-41883916cffc" RegularExpression="08C3::不经意间鱼饵被吃掉了|(?&lt;player&gt;.*)成功钓上了.*?|上钩的鱼逃走了……|没有钓到任何东西……|不经意间|捕到了.*?">
+        <Actions>
+          <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressCode="53" KeyPressWindow="最终幻想XIV" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="1200">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].currentgp}" ExpressionTypeL="String" ExpressionR="750" ExpressionTypeR="String" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="2" KeypressType="WindowMessage" KeyPressCode="54" KeyPressWindow="最终幻想XIV" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="1700">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].currentgp}" ExpressionTypeL="String" ExpressionR="500" ExpressionTypeR="String" ConditionType="NumericLess" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="3" KeypressType="WindowMessage" KeyPressCode="52" KeyPressWindow="最终幻想XIV" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="2500">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="4" KeypressType="WindowMessage" KeyPressCode="49" KeyPressWindow="最终幻想XIV" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="3500">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="true" Name="只提轻竿" Id="943e278a-2275-4e93-9348-ac3e3a491945" RegularExpression="{&quot;type&quot;:1}">
+        <Actions>
+          <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressCode="50" KeyPressWindow="最终幻想XIV" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="1000">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" OBSEndPoint="ws://${_const[OBSWebsocketEndpoint]}:${_const[OBSWebsocketPort]}" OBSPassword="${_const[OBSWebsocketPassword]}" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerOp="EnableTrigger" TriggerId="0c0735ae-d7b6-4783-9365-db8e965b1858" ActionType="Trigger" ExecutionDelayExpression="500">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" OBSEndPoint="ws://${_const[OBSWebsocketEndpoint]}:${_const[OBSWebsocketPort]}" OBSPassword="${_const[OBSWebsocketPassword]}" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerOp="DisableTrigger" TriggerId="943e278a-2275-4e93-9348-ac3e3a491945" ActionType="Trigger" ExecutionDelayExpression="500">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Name="全部提钩" Id="0c0735ae-d7b6-4783-9365-db8e965b1858" RegularExpression="{&quot;type&quot;:1}|{&quot;type&quot;:2}|{&quot;type&quot;:3}">
+        <Actions>
+          <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressCode="50" KeyPressWindow="最终幻想XIV" TextAuraFontSize="7.8" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="1000">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" OBSEndPoint="ws://${_const[OBSWebsocketEndpoint]}:${_const[OBSWebsocketPort]}" OBSPassword="${_const[OBSWebsocketPassword]}" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerOp="EnableTrigger" TriggerId="943e278a-2275-4e93-9348-ac3e3a491945" ActionType="Trigger" ExecutionDelayExpression="500">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" OBSEndPoint="ws://${_const[OBSWebsocketEndpoint]}:${_const[OBSWebsocketPort]}" OBSPassword="${_const[OBSWebsocketPassword]}" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerOp="DisableTrigger" TriggerId="0c0735ae-d7b6-4783-9365-db8e965b1858" ActionType="Trigger" ExecutionDelayExpression="500">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="true" Name="使用说明，看描述页" Id="5900b409-73a6-4fc6-8bfe-9f351209fffb" RegularExpression="" Description="启用抹茶插件，把“日志及数据共享”三个都打上勾&#xD;&#xA;技能1放抛竿，技能2放提钩，技能3放以小钓大宏&#xD;&#xA;技能4放大鱼猎手，技能5放沙利亚克的恩宠，技能6放强心剂&#xD;&#xA;&#xD;&#xA;以小钓大宏：&#xD;&#xA;/micon 以小钓大&#xD;&#xA;&#xD;/ac 以小钓大&#xD;&#xD;&#xA;/ac 以小钓大II &lt;wait.1&gt;&#xD;&#xD;&#xA;/ac 抛竿&#xD;&#xA;&#xD;&#xA;找冲分渔场抛竿就行了（建议用万能拟饵或者买足够多的鱼饵）&#xD;&#xA;&#xD;&#xA;已知问题：&#xD;&#xA;这里的鱼现在警惕性很高，看来还是换个地点比较好。（暂时无解）&#xD;&#xA;装备坏了怎么办（记得把搓东西的自动修理关闭）">
+        <Actions />
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
+</TriggernometryExport>
