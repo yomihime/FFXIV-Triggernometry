@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1">
+  <ExportedFolder Id="0abcf40a-c849-484c-baa6-7395e10a38ef" Name="挖宝挂件提醒" Enabled="true">
+    <Folders />
+    <Triggers>
+      <Trigger Enabled="true" Name="挖宝怪打完了" Id="cdf3f30a-5cb1-4dda-931d-77e9680c9191" RegularExpression="将陷阱引来的魔物全部打倒了|讨伐了所有的魔物|打倒了所有敌人" PrevActionsRefire="Deny" PeriodRefire="Deny" RefirePeriodExpression="60000">
+        <Actions>
+          <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressExpression="${var:防击退快捷键}" KeyPressCode="32" KeyPressWindow="最终幻想XIV" UseTTSTextExpression="挖宝怪打完了" ActionType="UseTTS">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Name="roll点提醒" Id="d788cffd-6835-44f4-8f75-43445f4c0df8" RegularExpression="请掷骰" PrevActionsRefire="Deny" PeriodRefire="Deny" RefirePeriodExpression="60000">
+        <Actions>
+          <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressExpression="${var:防击退快捷键}" KeyPressCode="32" KeyPressWindow="最终幻想XIV" UseTTSTextExpression="请掷骰" ActionType="UseTTS">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Name="传送走了" Id="5a3af542-2e2e-442d-86c1-e8c05970d7b9" RegularExpression="收到了.*?去往.*?的传送邀请。" PrevActionsRefire="Deny" PeriodRefire="Deny" RefirePeriodExpression="60000">
+        <Actions>
+          <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressExpression="${var:防击退快捷键}" KeyPressCode="32" KeyPressWindow="最终幻想XIV" UseTTSTextExpression="传送走了" ActionType="UseTTS">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Name="下底" Id="ce2c0891-0acb-4c15-9721-df45526932e5" RegularExpression="最终区的封锁解除了……" PrevActionsRefire="Deny" PeriodRefire="Deny" RefirePeriodExpression="60000">
+        <Actions>
+          <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressExpression="${var:防击退快捷键}" KeyPressCode="32" KeyPressWindow="最终幻想XIV" UseTTSTextExpression="下底了" ActionType="UseTTS">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
+</TriggernometryExport>
